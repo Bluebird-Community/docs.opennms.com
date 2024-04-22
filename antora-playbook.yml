@@ -12,8 +12,10 @@ runtime:
 site:
   title: Docs
   # the 404 page and sitemap files only get generated when the url property is set
-  url: https://docs.opennms.com/
+  # TODO MVR provide url: docs.bluebird.community
+  url: https://docs.bluebird.community/
   keys:
+    # TODO MVR update this
     google_analytics: 'G-WR2RML9P8J'
   start_page: start-page::index.adoc
   # the wildcarded directories will exclude everything in that path, so be aware when adding new files that do have h1 to those directories. Wildcards used to allow for Meridian/Horizon and different versions of each.
@@ -72,56 +74,20 @@ content:
   - url: .
     start_path: start-page
     branches: HEAD
-  - url: https://github.com/OpenNMS/opennms.git
+  - url: https://github.com/Bluebird-Community/opennms.git
     start_path: docs
     branches:
-      - 'master-*'
-      - '!master-29'
-      - '!master-28'
-      - '!master-27'
-      - '!master-26'
-      - '!master-25'
-      - '!master-24'
-      - '!master-23'
-      - '!master-22'
-      - '!master-21'
-      - '!master-20'
-  - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-prime.git
-    start_path: docs
-    branches:
-      - 'master-*'
-      - '!master-2020'
-      - '!master-2019'
-      - '!master-2018'
-      - '!master-2017'
-      - '!master-2016'
-      - '!master-2015'
+      - 'develop'
+    tags:
+      - 'v*'
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
-  - url: https://github.com/opennms/grafana-plugin.git
+  - url: https://github.com/Bluebird-Community/grafana-plugin.git
     start_path: docs
     branches:
       - 'main-*'
+      - '!main-8'
       - '!main-7'
-  - url: https://github.com/OpenNMS/alec.git
-    start_path: docs
-    branches:
-      - develop
-      - /^release-.*/
-    tags:
-      - v*
-      - '!v2.*.*'
-      - '!v2.*.*-ALPHA'
-      - '!v1.*.*'
-      - '!v1.1.1-doc'
-      - '!v2.0.0.alpha0' # same SNAPSHOT version as another branch
-      - '!v1.1.1' # Tag v1.1.1 has version number 1.1.1-SNAPSHOT use v1.1.1-doc instead
-      - '!v1.1.1-rebuild' # I thought I needed to remake the debs, but I did not
-  - url: https://github.com/OpenNMS-Cloud/lokahi.git
-    start_path: docs
-    branches:
-      - develop
-      - /^release-.*/
-  - url: https://github.com/OpenNMS/opennms-velocloud-plugin.git
+  - url: https://github.com/Bluebird-Community/opennms-velocloud-plugin.git
     start_path: docs
     branches:
       - main
@@ -129,13 +95,14 @@ content:
     tags:
       - v*
       - '!v1.0.0'
-  - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
+  - url: https://github.com/Bluebird-Community/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
       - release-*
+      - '!release-1.2*'
       - '!release-1.1*'
       - '!release-1.0*'
-  - url: https://github.com/OpenNMS/opennms-js.git
+  - url: https://github.com/Bluebird-Community/opennms-js.git
     start_path: docs-src
     branches: develop
     tags:
@@ -152,7 +119,7 @@ content:
     - '!v2.5.4'
 ui:
   bundle:
-    url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v3.1.0/ui-bundle.zip
+    url: https://github.com/Bluebird-Community/antora-ui-opennms/releases/download/v3.1.1-bluebird/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental_ui
 asciidoc:
@@ -163,7 +130,7 @@ asciidoc:
     idseparator: '-'
     page-pagination: ''
     source-language: asciidoc@
-    distribution: 'Horizon'
+    distribution: 'Bluebird'
     tabs: tabs
   extensions:
     - ./lib/tabs-block.js
